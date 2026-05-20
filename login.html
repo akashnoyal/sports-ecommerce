@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SportZone — Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <!-- TODO: Add logo, nav links (Home, Products, Cart, Login), cart icon -->
+  </nav>
+
+  <!-- LOGIN / REGISTER TABS -->
+  <div>
+    <button onclick="showTab('login')">Login</button>
+    <button onclick="showTab('register')">Register</button>
+  </div>
+
+  <!-- LOGIN FORM -->
+  <form id="loginForm" onsubmit="handleLogin(event)">
+    <!-- TODO: Add email input -->
+    <!-- TODO: Add password input -->
+    <!-- TODO: Add login button -->
+    <!-- TODO: Show error message if login fails -->
+  </form>
+
+  <!-- REGISTER FORM -->
+  <form id="registerForm" onsubmit="handleRegister(event)" style="display:none;">
+    <!-- TODO: Add full name input -->
+    <!-- TODO: Add email input -->
+    <!-- TODO: Add phone number input -->
+    <!-- TODO: Add password input -->
+    <!-- TODO: Add confirm password input -->
+    <!-- TODO: Add register button -->
+  </form>
+
+  <!-- CHECKOUT FORM (shown after login) -->
+  <form id="checkoutForm" onsubmit="handleCheckout(event)" style="display:none;">
+    <!-- TODO: Add shipping details fields (name, email, phone, address, city, pincode) -->
+    <!-- TODO: Add payment method selection (UPI, Card, Cash on Delivery) -->
+    <!-- TODO: Add Place Order button -->
+    <!-- TODO: Show order success message after submission -->
+  </form>
+
+  <!-- FOOTER -->
+  <footer>
+    <!-- TODO: Add footer content -->
+  </footer>
+
+  <script>
+    // TODO: Write JavaScript here
+
+    // Tab switching
+    function showTab(tab) {
+      // TODO: Show login or register form based on tab
+    }
+
+    // Login handler
+    function handleLogin(e) {
+      e.preventDefault();
+      // TODO: Validate email (must be valid format)
+      // TODO: Validate password (min 6 characters)
+      // TODO: Check credentials against localStorage users
+      // TODO: If valid, save loggedInUser to localStorage and redirect
+      // TODO: If invalid, show error message
+    }
+
+    // Register handler
+    function handleRegister(e) {
+      e.preventDefault();
+      // TODO: Validate name (min 3 characters)
+      // TODO: Validate email (valid format)
+      // TODO: Validate phone (10 digits)
+      // TODO: Validate password (min 6 characters)
+      // TODO: Validate confirm password (must match password)
+      // TODO: Check if email already exists in localStorage
+      // TODO: Save new user to localStorage users array
+      // TODO: Show success message and switch to login tab
+    }
+
+    // Checkout handler
+    function handleCheckout(e) {
+      e.preventDefault();
+      // TODO: Validate all shipping fields (name, email, phone, address, city, pincode)
+      // TODO: Check that a payment method is selected
+      // TODO: If valid, clear cart from localStorage
+      // TODO: Show order success message
+    }
+
+    // TODO: Update cart count in navbar
+  </script>
+
+</body>
+</html>
