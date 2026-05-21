@@ -7,10 +7,10 @@
 
 | Name | Page | Branch |
 |------|------|--------|
-| Sukenthiran (Leader) | Home Page — `index.html` | `feature-homepage` |
+| Sukenthiran | Home Page — `index.html` | `feature-homepage` |
 | Roshan Kumar | Products Page — `products.html` | `feature-products` |
 | Sam Joseph | Cart Page — `cart.html` | `feature-cart` |
-| Akash Noyal | Login & Checkout — `login.html` | `feature-auth-checkout` |
+| Akash Noyal (Leader) | Login & Checkout — `login.html` | `feature-auth-checkout` |
 
 ---
 
