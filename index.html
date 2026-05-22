@@ -1,49 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SportZone — Home</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/4.0.0/font/MaterialIcons-Regular.ttf">
+
 <body>
 
   <!-- NAVBAR -->
-  <nav>
-    <!-- TODO: Add logo, nav links (Home, Products, Cart, Login), cart icon -->
+  <nav class="relative start-0">
+    <img src="./images/6760516afdb701249546f8b4_Cover Sjop.jpg" alt="" width="100%" class="h-[80vh] ">
+    <div class="absolute flex top-7 left-16  text-white text-2xl md:left-10 start-0">
+      <h1><b>SNEAK</b>Y.
+      </h1>
+    </div>
+    <div class="flex gap-10 top-7 font-semibold text-white justify-center absolute inset-0 hidden md:flex">
+      <a href="products.html"> Products</a>
+      <a href="">About Us</a>
+      <a href="cart.html">Cart</a>
+      <a href="login.html">LogIn</a>
+    </div>
+    <div>
+      <a href="cart.html" class=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke-width="1.5" stroke="currentColor" class="size-6 absolute top-7 text-white right-16 ">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+        </svg>
+      </a>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="size-6 absolute top-7 ml-auto right-6 cursor-pointer md:hidden ml-auto">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </div>
+    <div class="absolute inset-0 text-white top-40">
+      <h1 style="text-align: center; font-size: 100px;" class="text-7xl font-bold mt-16 ">Products</h1>
+      <p style="text-align: center; " class=" px-5 pt-5 md:mt-4 max-w-96 ml-auto mr-auto font-bold">Unlock the Future of
+        Fashion—Discover Techwear Today and Elevate Your Wardrobe with Cutting-Edge Apparel Designed for Tomorrow’s
+        World. </p>
+    </div>
+    <div class="side-navbar" style="margin-right: -60%;">
+      <p style="text-align: center;">
+        <svg id="side-navbar-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+
+      </p>
+      <div class="side-navbar-links">
+        <p class="side-navbar-link">
+          <a href="index.html">Home</a>
+        </p>
+        <p class="side-navbar-link">
+          <a href="products.html">Products</a>
+        </p>
+
+        <p class="side-navbar-link">
+          <a href="cart.html">Carts</a>
+        </p>
+        <p class="side-navbar-link">
+          <a href="login.html">Login</a>
+        </p>
+      </div>
+    </div>
+
+
   </nav>
 
   <!-- HERO SECTION -->
-  <section>
+  <section class="flex flex-row items-center gap-4 py-6 pl-36 md:flex flex-row">
     <!-- TODO: Add hero title, description, and Shop Now button -->
+    <div class="relative flex-1 justify-center text-center">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="size-6 absolute left-2 top-5">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+      </svg>
+      <input type="search" placeholder="Search..." class=" border border-gray-300 py-5 pl-10 pr-4 w-[700px]">
+      <button class="absolute right-2 top-1 rounded bg-black text-white px-8 py-4 ">Search</button>
+    </div>
+    <select class=" border border-gray-300 py-5 px-4 mr-28 mt-0" style="width:600px;">
+      <option class="text-bold">All Products</option>
+      <option value="">Shoes</option>
+      <option value="">Boots</option>
+      <option value="">Sneakers</option>
+    </select>
+
   </section>
 
   <!-- CATEGORIES SECTION -->
-  <section>
-    <!-- TODO: Add sport category cards (Football, Cricket, Basketball, etc.) -->
+  <section class="flex " style="padding-left: 145px; gap: 32px; flex-wrap: wrap; ">
+    <div class=" hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:cursor-pointer">
+      <img src="./images/shoe1.jpg" alt="" style="width: 400px; height: 500px;">
+      <p style="padding-top: 10px;">WOMEN</p>
+      <h1 style="font-weight: 800; padding-top:2px;">ForgeRun</h1>
+      <p style="padding-top: 2px;">$ 59.00 USD</p>
+    </div>
+    <div class=" hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:cursor-pointer">
+      <img src="./images/shoe2.jpg" alt="" style="width: 400px; height: 500px;">
+      <p style="padding-top: 10px;">MEN</p>
+      <h1 style="font-weight: 800; padding-top:2px;">MetroMile</h1>
+      <p style="padding-top: 2px;">$ 75.00 USD</p>
+    </div>
+    <div class=" hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:cursor-pointer">
+      <img src="./images/shoe3.jpg" alt="" style="width: 400px; height: 500px;">
+      <p style="padding-top: 10px;">WOMEN</p>
+      <h1 style="font-weight: 800; padding-top:2px;">Side Ace</h1>
+      <p style="padding-top: 2px;">$ 38.70 USD</p>
+    </div>
+    <div class=" hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:cursor-pointer">
+      <img src="./images/shoe4.jpg" alt="" style="width: 400px; height: 500px;">
+      <p style="padding-top: 10px;">MEN</p>
+      <h1 style="font-weight: 800; padding-top:2px;">Urban Edge</h1>
+      <p style="padding-top: 2px;">$ 38.70 USD</p>
+    </div>
+    <div class=" hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:cursor-pointer">
+      <img src="./images/shoe5.jpg" alt="" style="width: 400px; height: 500px;">
+      <p style="padding-top: 10px;">MEN</p>
+      <h1 style="font-weight: 800; padding-top:2px;">VibeStep</h1>
+      <p style="padding-top: 2px;">$ 52.00 USD</p>
+    </div>
+    <div class=" hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:cursor-pointer">
+      <img src="./images/shoe6.jpg" alt="" style="width: 400px; height: 500px;">
+      <p style="padding-top: 10px;">WOMEN</p>
+      <h1 style="font-weight: 800; padding-top:2px;">CloudWalkers</h1>
+      <p style="padding-top: 2px;">$ 38.70 USD</p>
+    </div>
+    <div class=" hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:cursor-pointer">
+      <img src="./images/shoe7.jpg" alt="" style="width: 400px; height: 500px;">
+      <p style="padding-top: 10px;">WOMEN</p>
+      <h1 style="font-weight: 800; padding-top:2px;">NovaKick</h1>
+      <p style="padding-top: 2px;">$ 52.00 USD</p>
+    </div>
+    <div class=" hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:cursor-pointer">
+      <img src="./images/shoe8.jpg" alt="" style="width: 400px; height: 500px;">
+      <p style="padding-top: 10px;">MEN</p>
+      <h1 style="font-weight: 800; padding-top:2px;">AreoStep</h1>
+      <p style="padding-top: 2px;">$ 333.50 USD</p>
+    </div>
+    <div class=" hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:cursor-pointer">
+      <img src="./images/shoe1.jpg" alt="" style="width: 400px; height: 500px;">
+      <p style="padding-top: 10px;">WOMEN</p>
+      <h1 style="font-weight: 800; padding-top:2px;">ForgeRun</h1>
+      <p style="padding-top: 2px;">$ 59.00 USD</p>
+    </div>
   </section>
 
-  <!-- FEATURED PRODUCTS SECTION -->
-  <section>
-    <!-- TODO: Render featured products using JavaScript -->
-    <div id="featuredProducts"></div>
+  <section class="px-10 ml-10 md:flex  ">
+    <div class="md:w-1/2">
+      <h1 class="text-4xl font-bold pt-10 md:text-8xl" style="padding-left: 50px;">Cnct._ <br>
+        With Us</h1>
+      <p class="mt-6 max-w-md md:text-xl font-semibold " style="width: 250px; font-weight: 700 ;padding-left: 50px;">Got
+        questions or
+        need assistance? Our team is here to help you navigate the future of fashion. Reach out to us anytime—let’s
+        connect and gear you up for what’s next!</p>
+      <div style="padding-left: 50px;">
+        <input type="email" placeholder="Your Email" class=" mt-8 border-b-2 border-black pb-2 outline-none max-w-md"
+          style="width: 95%; padding-left: 4px;">
+      </div>
+    </div>
+    <div class="hidden md:block ">
+      <img src="./images/sec1.jpg" class="w-[600px] h-[650px] object-cover "
+        style="border-radius: 20px; padding-top: 50px;">
+    </div>
   </section>
-
+  <section>
+    <div
+      style="padding-top: 40px;; width: 100%; font-size:128px; border-top: solid black 1px ; border-bottom: solid black 1px; margin-top: 100px; padding-bottom: 40px;">
+      <h1>@ Sneaky_template / insta</h1>
+    </div>
+  </section>
+  <div class="flex gap-8 mt-10" style="padding-left: 120px; padding-right: 120px;">
+    <div>
+      <img src="./images/sec2.jpg" alt="">
+    </div>
+    <div>
+      <img src="./images/sec3.jpg" alt="">
+    </div>
+    <div>
+      <img src="./images/sec4.jpg" alt="">
+    </div>
+    <div>
+      <img src="./images/sec5.jpg" alt="">
+    </div>
+  </div>
+  <section style="border-top: solid black 1px; border-bottom: solid black 1px; margin-top: 100px ;display: flex;">
+    <div style="margin-left: 120px; margin-top: 80px; margin-bottom: 80px; display: flex;">
+      <button
+        style="background-color: black; color: white;padding-left: 10px;padding-right: 10px ; font-size: 25px; display: inline-block; "><b>SNEAK</b>Y.</button>
+      &copy;
+    </div>
+    <div style="margin-left: 320px; margin-top: 80px; margin-bottom: 80px; text-align: center;">
+      <h3 style="padding-bottom: 6px;"><b>[SHOP]</b></b></h3>
+      <p style="padding-bottom: 3px; font-weight: lighter;">Proucts</p>
+      <p style="padding-bottom: 3px; font-weight: lighter">Why Us</p>
+      <p style="padding-bottom: 3px; font-weight: lighter">Blog</p>
+      <p style="padding-bottom: 3px; font-weight: lighter">Contact</p>
+    </div>
+    <div style="margin-left: 100px; margin-top: 80px;text-align: center;">
+      <h3 style="padding-bottom: 6px;"><b>[INFO]</b></b></h3>
+      <p style="padding-bottom: 3px; font-weight: lighter">Instagram</p>
+      <p style="padding-bottom: 3px; font-weight: lighter">Facebook</p>
+      <p style="padding-bottom: 3px; font-weight: lighter">Linkedin</p>
+      <p style="padding-bottom: 3px; font-weight: lighter">Twitter</p>
+    </div>
+    <div style="margin-left: 100px; margin-top: 80px;text-align: center;">
+      <h3 style="padding-bottom: 6px;"><b>[FOLLOW US_]</b></b></h3>
+      <p style="padding-bottom: 3px; font-weight: lighter">Style Guide</p>
+      <p style="padding-bottom: 3px; font-weight: lighter">Licensing</p>
+      <p style="padding-bottom: 3px; font-weight: lighter">Instruction</p>
+      <p style="padding-bottom: 3px; font-weight: lighter">Change Log</p>
+    </div>
+    <div style="margin-left: 40px; margin-top: 80px;text-align: center;">
+      <h3 style="padding-bottom: 6px;"><b>[NEWSLETTER]</b></b></h3>
+      <br>
+      <input type="email" placeholder="Your Email"
+        style="margin-left: 80px; border-bottom: solid black 1px; width: 200px;">
+    </div>
+    </div>
+  </section>
   <!-- FOOTER -->
-  <footer>
-    <!-- TODO: Add footer content -->
+  <footer class="flex " style="margin-top: 30px;margin-left: 120px;margin-bottom: 30px;">
+    <h3>CREATED BY </h3> <b style="margin-left: 5px; text-decoration: underline;">GROUP_7</b>
+    <h3 style="margin-left: 1050px;">POWERED BY</h3> <b
+      style="margin-left: 5px; text-decoration: underline;">SUKEEEEE</b>
   </footer>
 
   <script src="script.js"></script>
   <script>
-    // TODO: Write JavaScript here
-    // 1. Define products array with id, name, category, price, image
-    // 2. Save products to localStorage
-    // 3. Render featured products on the page
-    // 4. Add to cart function
-    // 5. Update cart count in navbar
+    var sidenav = document.querySelector(".side-navbar")
+
+    var menuicon = document.querySelector(".fa-bars")
+
+    var closeicon = document.getElementById("side-navbar-close")
+
+
+    menuicon.addEventListener("click", function () {
+
+      sidenav.style.marginRight = "0px"
+
+    })
+
+
+    closeicon.addEventListener("click", function () {
+
+      sidenav.style.marginRight = "-60%"
+
+    })
   </script>
 
 </body>
+
 </html>
