@@ -1,98 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>SportZone — Login</title>
-  <link rel="stylesheet" href="style.css" />
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <!-- TODO: Add logo, nav links (Home, Products, Cart, Login), cart icon -->
-  </nav>
-
-  <!-- LOGIN / REGISTER TABS -->
-  <div>
-    <button onclick="showTab('login')">Login</button>
-    <button onclick="showTab('register')">Register</button>
-  </div>
-
-  <!-- LOGIN FORM -->
-  <form id="loginForm" onsubmit="handleLogin(event)">
-    <!-- TODO: Add email input -->
-    <!-- TODO: Add password input -->
-    <!-- TODO: Add login button -->
-    <!-- TODO: Show error message if login fails -->
-  </form>
-
-  <!-- REGISTER FORM -->
-  <form id="registerForm" onsubmit="handleRegister(event)" style="display:none;">
-    <!-- TODO: Add full name input -->
-    <!-- TODO: Add email input -->
-    <!-- TODO: Add phone number input -->
-    <!-- TODO: Add password input -->
-    <!-- TODO: Add confirm password input -->
-    <!-- TODO: Add register button -->
-  </form>
-
-  <!-- CHECKOUT FORM (shown after login) -->
-  <form id="checkoutForm" onsubmit="handleCheckout(event)" style="display:none;">
-    <!-- TODO: Add shipping details fields (name, email, phone, address, city, pincode) -->
-    <!-- TODO: Add payment method selection (UPI, Card, Cash on Delivery) -->
-    <!-- TODO: Add Place Order button -->
-    <!-- TODO: Show order success message after submission -->
-  </form>
-
-  <!-- FOOTER -->
-  <footer>
-    <!-- TODO: Add footer content -->
-  </footer>
+<body class="bg-gray-50">
 
   <script>
-    // TODO: Write JavaScript here
 
-    // Tab switching
-    function showTab(tab) {
-      // TODO: Show login or register form based on tab
+    const loggedInUser =
+      localStorage.getItem("loggedInUser");
+
+    // If already logged in
+    if (loggedInUser) {
+
+      window.location.href = "index.html";
     }
 
-    // Login handler
+  </script>
+
+  <section class="min-h-screen flex items-center justify-center px-4">
+
+    <div class="w-full max-w-md bg-white rounded-xl shadow-lg p-8">
+
+      <h1 class="text-3xl font-bold text-center text-gray-800 mb-2">
+        Sports Zone
+      </h1>
+
+      <p class="text-center text-gray-500 mb-6">
+        Sign in to your account
+      </p>
+
+      <form class="space-y-5" onsubmit="handleLogin(event)">
+
+        <!-- Email -->
+        <div>
+          <label for="email" class="block mb-2 text-sm font-medium text-gray-700">
+            Email
+          </label>
+
+          <input type="email" id="email" placeholder="Enter your email"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label for="password" class="block mb-2 text-sm font-medium text-gray-700">
+            Password
+          </label>
+
+          <input type="password" id="password" placeholder="Enter your password"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <!-- Remember -->
+        <div class="flex items-center gap-2">
+
+          <input type="checkbox" id="remember">
+
+          <label for="remember" class="text-sm text-gray-600">
+            Remember me
+          </label>
+
+        </div>
+
+        <!-- Button -->
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg">
+          Sign In
+        </button>
+
+        <!-- Register -->
+        <p class="text-center text-sm text-gray-600">
+
+          Don't have an account?
+
+          <a href="register.html" class="text-blue-600 hover:underline">
+            Register
+          </a>
+
+        </p>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <script>
     function handleLogin(e) {
       e.preventDefault();
-      // TODO: Validate email (must be valid format)
-      // TODO: Validate password (min 6 characters)
-      // TODO: Check credentials against localStorage users
-      // TODO: If valid, save loggedInUser to localStorage and redirect
-      // TODO: If invalid, show error message
-    }
 
-    // Register handler
-    function handleRegister(e) {
-      e.preventDefault();
-      // TODO: Validate name (min 3 characters)
-      // TODO: Validate email (valid format)
-      // TODO: Validate phone (10 digits)
-      // TODO: Validate password (min 6 characters)
-      // TODO: Validate confirm password (must match password)
-      // TODO: Check if email already exists in localStorage
-      // TODO: Save new user to localStorage users array
-      // TODO: Show success message and switch to login tab
-    }
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
 
-    // Checkout handler
-    function handleCheckout(e) {
-      e.preventDefault();
-      // TODO: Validate all shipping fields (name, email, phone, address, city, pincode)
-      // TODO: Check that a payment method is selected
-      // TODO: If valid, clear cart from localStorage
-      // TODO: Show order success message
-    }
+      // Empty fields check
+      if (!email || !password) {
+        alert("Please fill all fields");
+        return;
+      }
 
-    // TODO: Update cart count in navbar
+      // Get users
+      const users =
+        JSON.parse(localStorage.getItem("users")) || [];
+
+      // Find matching user
+      const validUser = users.find(
+        (user) =>
+          user.email === email &&
+          user.password === password
+      );
+
+      // Invalid login
+      if (!validUser) {
+        alert("Invalid Email or Password");
+        return;
+      }
+
+      // Save logged in user
+      localStorage.setItem(
+        "loggedInUser",
+        JSON.stringify(validUser)
+      );
+
+      alert("Login Successful");
+
+      // Redirect
+      window.location.href = "index.html";
+    }
   </script>
 
 </body>
+
 </html>
