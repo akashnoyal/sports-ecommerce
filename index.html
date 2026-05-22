@@ -1,49 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>SportZone — Home</title>
-  <link rel="stylesheet" href="style.css" />
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+
+<body class="bg-gray-100">
+
+  <script>
+    // Protect page
+    const loggedInUser = localStorage.getItem("loggedInUser");
+
+    if (!loggedInUser) {
+      window.location.href = "login.html";
+    }
+  </script>
 
   <!-- NAVBAR -->
-  <nav>
-    <!-- TODO: Add logo, nav links (Home, Products, Cart, Login), cart icon -->
+  <nav class="bg-white shadow-md px-6 py-4 flex items-center justify-between">
+
+    <h1 class="text-2xl font-bold text-blue-600">
+      Sports Zone
+    </h1>
+
+    <div class="flex items-center gap-6">
+
+      <a href="index.html" class="text-gray-700 hover:text-blue-600">
+        Home
+      </a>
+
+      <a href="#" class="text-gray-700 hover:text-blue-600">
+        Products
+      </a>
+
+      <a href="#" class="text-gray-700 hover:text-blue-600">
+        Cart
+      </a>
+
+      <button onclick="logout()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg">
+        Logout
+      </button>
+
+    </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section>
-    <!-- TODO: Add hero title, description, and Shop Now button -->
+  <!-- HERO -->
+  <section class="bg-blue-600 text-white py-20 px-6 text-center">
+
+    <h1 class="text-5xl font-bold mb-4">
+      Welcome to Sports Zone
+    </h1>
+
   </section>
 
-  <!-- CATEGORIES SECTION -->
-  <section>
-    <!-- TODO: Add sport category cards (Football, Cricket, Basketball, etc.) -->
-  </section>
-
-  <!-- FEATURED PRODUCTS SECTION -->
-  <section>
-    <!-- TODO: Render featured products using JavaScript -->
-    <div id="featuredProducts"></div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <!-- TODO: Add footer content -->
-  </footer>
-
-  <script src="script.js"></script>
   <script>
-    // TODO: Write JavaScript here
-    // 1. Define products array with id, name, category, price, image
-    // 2. Save products to localStorage
-    // 3. Render featured products on the page
-    // 4. Add to cart function
-    // 5. Update cart count in navbar
+
+    // Logout
+    function logout() {
+
+      localStorage.removeItem("loggedInUser");
+
+      window.location.href = "login.html";
+    }
+
   </script>
 
 </body>
+
 </html>
