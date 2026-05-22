@@ -13,6 +13,19 @@
 
 <body class="bg-gray-100">
 
+    <script>
+
+        const loggedInUser =
+            localStorage.getItem("loggedInUser");
+
+        // If already logged in
+        if (loggedInUser) {
+
+            window.location.href = "index.html";
+        }
+
+    </script>
+
     <section class="min-h-screen flex items-center justify-center px-4">
 
         <div class="w-full max-w-md bg-white shadow-lg rounded-xl p-8">

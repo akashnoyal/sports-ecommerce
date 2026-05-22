@@ -12,6 +12,15 @@
 
 <body class="bg-gray-100">
 
+    <script>
+        // Protect page
+        const loggedInUser = localStorage.getItem("loggedInUser");
+
+        if (!loggedInUser) {
+            window.location.href = "login.html";
+        }
+    </script>
+
     <section class="min-h-screen flex items-center justify-center px-4 py-10">
 
         <div class="w-full max-w-4xl bg-white rounded-xl shadow-lg p-8">
